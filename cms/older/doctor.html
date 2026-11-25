@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor Queue - Rwebeya Clinic</title>
+    <style>
+        :root {
+            --primary: #1B4D3E;
+            --accent: #87A96B;
+            --bg: #F7F9F6;
+            --card-bg: #FFFFFF;
+            --text: #2C3E35;
+            --border: #D3E0D7;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 30px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(27, 77, 62, 0.06);
+            border: 1px solid var(--border);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        h2 { color: var(--primary); margin: 0; }
+        .logout { color: #A93226; text-decoration: none; font-weight: 600; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th { background: #EAF0EC; color: var(--primary); font-weight: 600; }
+        .btn-start {
+            background: var(--primary);
+            color: white;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .status-waiting { color: #D68910; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Dr. Patrick Ndayisenga - Patient Queue</h2>
+            <a href="login.html" class="logout">Logout</a>
+        </div>
+        <h3>Today's Consultation Queue</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Arrival Time</th>
+                    <th>Insurance</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pacifique Uwase</td>
+                    <td>09:15 AM</td>
+                    <td>RSSB</td>
+                    <td><span class="status-waiting">Waiting</span></td>
+                    <td><button class="btn-start" onclick="alert('Starting consultation with Pacifique Uwase')">Start Consultation</button></td>
+                </tr>
+                <tr>
+                    <td>Eric Gasana</td>
+                    <td>09:40 AM</td>
+                    <td>Private</td>
+                    <td><span class="status-waiting">Waiting</span></td>
+                    <td><button class="btn-start" onclick="alert('Starting consultation with Eric Gasana')">Start Consultation</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

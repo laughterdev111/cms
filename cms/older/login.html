@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rwebeya Clinic - Staff Portal</title>
+    <style>
+        :root {
+            --primary: #1B4D3E;
+            --accent: #87A96B;
+            --bg: #F7F9F6;
+            --card-bg: #FFFFFF;
+            --text: #2C3E35;
+            --border: #D3E0D7;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(27, 77, 62, 0.08);
+            width: 380px;
+            border: 1px solid var(--border);
+        }
+        h2 {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #617A6E;
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 14px;
+            background: #FAFCFA;
+        }
+        input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(27, 77, 62, 0.1);
+        }
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background: #14382c;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <h2>Rwebeya Clinic</h2>
+        <div class="subtitle">Internal Management System</div>
+        <form onsubmit="handleLogin(event)">
+            <div class="form-group">
+                <label>Staff Email</label>
+                <input type="email" id="email" required placeholder="staff@rwebeya.clinic">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="password" required placeholder="••••••••">
+            </div>
+            <button type="submit" class="btn">Sign In</button>
+        </form>
+    </div>
+
+    <script>
+        function handleLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            if (email.includes('admin')) {
+                window.location.href = 'admin.html';
+            } else if (email.includes('doctor')) {
+                window.location.href = 'doctor.html';
+            } else {
+                window.location.href = 'patients.html';
+            }
+        }
+    </script>
+</body>
+</html>

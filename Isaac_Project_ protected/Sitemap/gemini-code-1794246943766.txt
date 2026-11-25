@@ -1,0 +1,17 @@
+[ login.html ] (Entry Point)
+       │
+       ├── (Email matches Admin) ──► [ admin_dashboard.html ]
+       │                                     │
+       │                                     ├── Manages ──► [ users table ] (Staff accounts & roles)
+       │                                     └── Links to ──► [ receptionist_dashboard.html ]
+       │                                                   └── [ doctor_dashboard.html ]
+       │
+       ├── (Email matches Receptionist) ──► [ receptionist_dashboard.html ]
+       │                                             │
+       │                                             ├── Inserts ──► [ patients table ] (Demographics & RSSB/RAMA Insurance)
+       │                                             └── Feeds into ──► [ consultations table ] (Patient Queue)
+       │
+       └── (Email matches Doctor) ─────► [ doctor_dashboard.html ]
+                                                     │
+                                                     ├── Queries ──► [ consultations table ] (Waiting queue)
+                                                     └── Updates ──► [ consultations table ] (Clinical notes & Completed status)

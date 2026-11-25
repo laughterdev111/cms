@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+</head>
+<style>
+
+    .gradientAnimation {
+        background: linear-gradient(to left , rgb(66, 165, 71) , rgb(138, 8, 110) , rgba(31, 117, 10, 0.521) , green);
+        background-clip: text;
+        color: transparent;
+        background-size: 200% 300%;
+        font-size: 100px;
+        animation: gradient 5s ease-in-out infinite;
+    }
+
+    @keyframes gradient {
+
+        from {
+            background-position: 10% 50%;
+        }
+        to{
+            background-position: 50% 100%;
+        }
+        
+    }
+</style>
+
+<body>
+    <input type="number" id="nbr1">
+    <input type="number" id="nbr2">
+    <button id="action" onclick="multiply()">Answer</button>
+    <div id="results"></div>
+
+
+
+    <div class="gradientAnimation">
+        Hello Word Have A Nice Day
+    </div>
+    <script>
+        const input1 = document.getElementById('nbr1');
+        const input2 = document.getElementById('nbr2');
+        const results = document.getElementById('results');
+        // var answer = input1 * input2;
+
+        function multiply() {
+            let val1 = Number(input1.value);
+            let val2 = Number(input2.value);
+            results.innerHTML = val1 * val2;
+        }
+    </script>
+</body>
+
+</html>
