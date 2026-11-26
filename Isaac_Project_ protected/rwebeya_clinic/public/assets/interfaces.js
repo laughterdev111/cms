@@ -1,2 +1,0 @@
-
-(()=>{const root=document.documentElement;const saved=localStorage.getItem('rwebeya-theme');root.dataset.theme=saved||'light';document.querySelectorAll('[data-theme-toggle]').forEach(b=>b.addEventListener('click',()=>{const next=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=next;localStorage.setItem('rwebeya-theme',next);b.textContent=next==='dark'?'☀ Light mode':'☾ Dark mode'}));document.querySelectorAll('[data-theme-toggle]').forEach(b=>b.textContent=root.dataset.theme==='dark'?'☀ Light mode':'☾ Dark mode')})();
